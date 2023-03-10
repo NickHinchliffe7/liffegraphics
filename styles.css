@@ -1,0 +1,362 @@
+/* LIFFE */
+
+
+
+
+/* COLOUR VARIABLES 
+============================================== */
+:root {
+  --dark: #0a0a0a;
+  --light: #EAEAEA;
+  --green: #094438;
+  --darkgreen: #0F2D26;
+
+}
+
+
+
+/* BASE STYLES
+============================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;  
+}
+
+body {
+  margin: 0;
+  padding: 0 0 0;
+  font-size: 18px;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.2;
+  overflow-x: hidden;
+  width: 100vw;
+  max-width: 100%;
+  min-height: 100vh;
+  background: var(--green);
+  color: var(--light);
+  display: grid;
+  align-items: center;
+  
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  /* max-width: 1600px; */
+  margin: 0 auto;
+  padding: 0;
+}
+
+section {
+  scroll-behavior: smooth;
+}
+
+
+/* NAVIGATION
+============================================== */
+nav {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.5em;
+  text-align: right;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+
+
+/* GRID SYSTEM
+============================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+}
+
+.home-info {
+  text-align: center;
+}
+
+.round-img-corners{
+  border-radius: 0 0 3em 3em;
+}
+
+
+/* TYPOGRAPHY
+============================================== */
+h1 {
+  font-weight: 500;
+  font-size: 2.5em;
+  line-height: 90%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  margin: 0;
+  
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  max-width: 22em;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 1em 0;
+}
+
+p {
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* BUTTONS
+============================================== */
+
+.button{
+  padding: 0.25em 2em;
+  text-transform: uppercase;
+  border: 2px solid var(--dark);
+  border-radius: 1em;
+  color: var(--light);
+  background-color: var(--green);
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.button:hover{
+  background-color: var(--light);
+  color: var(--green)
+}
+
+
+
+/* HOME
+============================================== */
+
+.home {
+  padding: 2.5em 1em;
+  min-height: 100vh;
+  text-align: center;
+  background-image: url(images/liffebg.png);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.small-logo {
+  display: block;
+  max-width: 60vmin;
+  width: 100%;
+}
+
+.large-logo {
+  display: none;
+  max-width: 60vmin;
+  width: 100%;
+}
+
+
+
+/* PORTFOLIO
+============================================== */
+
+.portfolio {
+  padding: 2.5em 1em;
+  width: 100vw;
+  min-height: 90vh;
+  max-height: 90vh;
+  overflow-y: scroll;
+  background-color: var(--darkgreen);
+  position: relative;
+}
+
+.portfolio-grid {
+  margin: 2em 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.work img {
+  display: block;
+  margin: 0
+}
+
+.project-thumbnail {
+  display: block;
+  cursor: pointer;
+}
+
+.project-image {
+  display: none;
+}
+
+.project-display {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--darkgreen);
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+  justify-items: center;
+  align-items: center;
+  align-content: space-around;
+  justify-content: center;
+  padding: 1em;
+}
+
+.project-active .project-display {
+  display: grid;
+}
+
+.project-active .portfolio-grid {
+  display: none;
+}
+
+.project-display-close {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.project-featured {
+  max-width: 66vmin;
+}
+
+.project-list {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-gap: 1em;
+  height: auto;
+  overflow: scroll;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
+  grid-auto-flow: column;
+  width: 100%;
+  min-height: 7em;;
+}
+
+.project-list::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.project-list-item {
+  width: 5em;
+  height: 5em;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.project-list-active {
+  font-size: 1.25em;
+}
+
+
+/* CONTACT
+============================================== */
+
+.contact {
+  text-align: center;
+  padding: 2.5em 0 0 0;
+}
+
+.contact a {
+  display: block;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(5, 2em);
+  grid-gap: 1em;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  padding: 2em 0;
+  margin-top: 2em;
+  background-image: url(images/liffebg.png);
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+/* MEDIA QUERIES
+============================================== */
+
+@media (min-width: 750px) {
+
+  .grid{
+    grid-template-columns: 1fr 1fr;
+  }
+  
+}
+
+
+
+@media (min-width: 900px) {
+  
+  .small-logo {
+    display: none;
+  }
+
+  .large-logo {
+    display: block;
+  }
+  
+  nav {
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 2.5em;
+  }
+
+  .grid{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .portfolio-grid{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  .project-display {
+    grid-template-columns: 1fr 10em;
+  }
+
+  .project-list {
+    height: 100%;
+    width: auto;
+    grid-auto-flow: row;
+  }
+  
+
+}
