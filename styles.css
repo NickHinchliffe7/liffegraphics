@@ -106,7 +106,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-weight: bold;
   text-align: center;
   max-width: 22em;
@@ -146,7 +146,7 @@ a {
 
 .button:hover{
   background-color: var(--light);
-  color: var(--green)
+  color: var(--dark)
 }
 
 
@@ -168,13 +168,13 @@ a {
 
 .small-logo {
   display: block;
-  max-width: 60vmin;
+  max-width: 100vmin;
   width: 100%;
 }
 
 .large-logo {
   display: none;
-  max-width: 60vmin;
+  max-width: 110vmin;
   width: 100%;
 }
 
@@ -226,7 +226,7 @@ a {
   grid-gap: 1em;
   justify-items: center;
   align-items: center;
-  align-content: space-around;
+  align-content: center;
   justify-content: center;
   padding: 1em;
 }
@@ -253,8 +253,6 @@ a {
 
 .project-list {
   display: grid;
-  justify-items: center;
-  align-items: center;
   grid-gap: 1em;
   height: auto;
   overflow: scroll;
@@ -262,7 +260,6 @@ a {
   scrollbar-width: none;
   grid-auto-flow: column;
   width: 100%;
-  min-height: 7em;;
 }
 
 .project-list::-webkit-scrollbar {
@@ -276,11 +273,6 @@ a {
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  transition: all 0.5s;
-}
-
-.project-list-active {
-  font-size: 1.25em;
 }
 
 
@@ -298,7 +290,7 @@ a {
 
 footer {
   display: grid;
-  grid-template-columns: repeat(5, 2em);
+  grid-template-columns: repeat(4, 2em);
   grid-gap: 1em;
   justify-content: center;
   align-items: center;

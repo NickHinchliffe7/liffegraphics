@@ -23,7 +23,6 @@
     let projList = document.querySelector('.project-list')
     let list = ``
 
-
     for (let i = 0; i < projects.length; i++) {
       let project = projects[i]     
       let thumb = project.querySelector('.project-thumbnail img').getAttribute('src')
@@ -33,12 +32,9 @@
         caption = project.querySelector('.project-caption').textContent
       }
       list += `<div class="project-list-item" style="background-image: url(${thumb});" data-src="${image}" data-caption="${caption}"></div>`
-
       project.addEventListener('click', function() {
         document.body.classList.add('project-active')
           projFeatured.innerHTML = `<div><img src=${image} alt=""><div class="caption">${caption}</div></div>`
-          
-          highlightActiveListItem()
       });
     }
 
@@ -54,34 +50,8 @@
       let itemCap = item.getAttribute('data-caption')
       item.addEventListener('click', function() {
         projFeatured.innerHTML = `<div><img src=${itemSrc} alt=""><div class="caption">${itemCap}</div></div>`
-        highlightActiveListItem()
       })
     }
 
   }
-
-  function highlightActiveListItem() {
-
-    let projList = document.querySelector('.project-list')
-
-    if (projList.querySelector('.project-list-active')) {
-      projList.querySelector('.project-list-active').classList.remove('project-list-active')
-    }
-  
-    let sideBar = document.querySelectorAll('.project-list-item')
-    let activeSrc = document.querySelector('.project-featured img').getAttribute('src')
-
-    console.log(sideBar)
-    console.log(activeSrc)
-  
-    for (let i = 0; i < sideBar.length; i++) {
-      if (sideBar[i].getAttribute('data-src') === activeSrc) {
-        sideBar[i].classList.add('project-list-active')
-      }
-    }
-    
-  }
-
 })();
-
-
