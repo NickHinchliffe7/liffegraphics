@@ -451,7 +451,7 @@ p {
 
 footer {
   display: grid;
-  grid-template-columns: repeat(5, 2em);
+  grid-template-columns: repeat(7, 2em);
   grid-gap: 1em;
   justify-content: center;
   align-items: center;
