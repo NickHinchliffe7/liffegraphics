@@ -205,8 +205,10 @@ h2 {
   font-size: 1.25em;
   font-weight: 400;
   text-align: center;
-  max-width: 22em;
-  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 1em 0;
+  color: white;
+  
 }
 
 h3 {
@@ -286,6 +288,107 @@ a {
   color: #ffffff;
   font-size: 40px;
   cursor: pointer;
+}
+
+/* Center align header */
+.carousel-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.custom-carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the container */
+    overflow: hidden;
+    margin-bottom: 40px; /* Add space below the carousel */
+}
+
+.custom-carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.custom-carousel-wrapper {
+    display: flex;
+    transition: transform 0.8s ease-in-out; /* Adjust timing as needed */
+}
+
+.custom-carousel-item {
+    flex: 0 0 33.33%; /* 1x3 layout */
+    box-sizing: border-box;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-carousel-item img {
+    width: 100%;
+    max-width: 150px; /* Maximum width of image */
+    max-height: 100px; /* Maximum height of image */
+    object-fit: contain; /* Preserve aspect ratio */
+    display: block;
+    border-radius: 8px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .custom-carousel-item {
+        flex: 0 0 100%; /* Stack items on small screens */
+    }
+}
+
+
+/* people ive worked with */
+
+.centered-heading {
+  margin: 2;
+  text-align: center;
+}
+
+/* The main carousel element */
+.custom-carousel {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  justify-content: center; /* Center carousel items */
+}
+
+/* Wrapper for carousel items */
+.custom-carousel-wrapper {
+  display: flex;
+  transition: transform 0.8s ease-in-out; /* Adjust timing as needed */
+}
+
+/* Carousel items */
+.custom-carousel-item {
+  flex: 0 0 33.33%; /* 1x3 layout for desktop */
+  box-sizing: border-box;
+  padding: 0 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0; /* Prevent content overflow issues */
+}
+
+/* Styling for images inside the carousel items */
+.custom-carousel-item img {
+  width: 100%;
+  max-width: 200px; /* Maximum width of image */
+  max-height: 125px; /* Maximum height of image */
+  object-fit: contain; /* Preserve aspect ratio */
+  display: block;
+  border-radius: 80px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .custom-carousel-item {
+      flex: 0 0 100%; /* 1x1 layout for mobile screens */
+  }
 }
 
 

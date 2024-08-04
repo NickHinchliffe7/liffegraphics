@@ -208,3 +208,54 @@ function mobileMenu() {
 
 mobileMenu()
 
+let currentSlide = 0; // Index for tracking the current slide
+const slideInterval = 5000; // Time between slides in milliseconds (e.g., 5000ms for 5 seconds)
+let autoSlideInterval;
+
+function setupCarousel() {
+    const carouselWrapper = document.querySelector('.custom-carousel-wrapper');
+    const items = Array.from(document.querySelectorAll('.custom-carousel-item'));
+    const totalItems = items.length;
+
+    // Clone the items to create an infinite loop effect
+    const clones = [...items, ...items];
+    
+    // Add cloned items to the wrapper
+    carouselWrapper.innerHTML = '';
+    clones.forEach(item => carouselWrapper.appendChild(item.cloneNode(true)));
+
+    // Set the width of the carousel wrapper to fit all items
+    carouselWrapper.style.width = `${(totalItems + totalItems) * 100}%`;
+    document.querySelector('.custom-carousel').style.transform = `translateX(-${items[0].offsetWidth}px)`;
+
+    // Start automatic sliding
+    autoSlideInterval = setInterval(nextSlide, slideInterval);
+}
+
+function moveToSlide(slideIndex) {
+    const carouselWrapper = document.querySelector('.custom-carousel-wrapper');
+    const itemWidth = document.querySelector('.custom-carousel-item').offsetWidth;
+    const totalItems = document.querySelectorAll('.custom-carousel-item').length / 2;
+
+    carouselWrapper.style.transition = 'transform 0.8s ease-in-out'; // Match with CSS transition timing
+    carouselWrapper.style.transform = `translateX(-${(slideIndex + 1) * itemWidth}px)`;
+
+    // If the last slide is reached, reset the position without transition
+    if (slideIndex === totalItems - 1) {
+        setTimeout(() => {
+            carouselWrapper.style.transition = 'none';
+            carouselWrapper.style.transform = `translateX(-${itemWidth}px)`;
+            currentSlide = 0;
+        }, 800); // Match with CSS transition timing
+    }
+}
+
+function nextSlide() {
+    const totalItems = document.querySelectorAll('.custom-carousel-item').length / 2;
+    currentSlide = (currentSlide + 1) % totalItems;
+    moveToSlide(currentSlide);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupCarousel();
+});
