@@ -66,6 +66,30 @@ section {
   display: none;
 }
 
+.section-top {
+  background-color: #f4f4f4;
+  position: relative;
+  z-index: 1; /* Ensure top section stays above the wave */
+}
+
+.section-bottom {
+  background-color: #fff;
+  position: relative;
+  z-index: 1; /* Ensure bottom section stays above the wave */
+}
+
+
+
+@media (max-width: 768px) {
+  section {
+    padding: 30px 1em; /* Smaller padding for mobile */
+  }
+
+  .wave-divider img {
+    width: 100vw; /* Ensure full width on mobile */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
 
 /* GRID
 ========================================================= */
@@ -297,10 +321,10 @@ a {
 }
 
 .custom-carousel-container {
-    position: relative;
+    position:relative;
     width: 80%;
     max-width: 1200px;
-    margin: 0 auto; /* Centers the container */
+    margin:  auto; /* Centers the container */
     overflow: hidden;
     margin-bottom: 40px; /* Add space below the carousel */
 }
@@ -454,6 +478,7 @@ a {
   text-align: left;
 }
 
+
 /* body {
 margin: 0;
 padding: 0 0 0;
@@ -473,23 +498,57 @@ align-items: center;
 /* CONTACT
 ============================================== */
 
+.wave2 {
+  text-align: center;
+  padding: 2.5em 0 0 0;
+  background-image:url(images/conact.svg) ;
+  background-size: cover;
+  background-position: center;
+  background-color: #094438;
+  
+  
+  }
+  
+  @media (max-width: 768px) {
+  .contact {
+    min-height: 250px; /* Increase minimum height for mobile devices */
+  }
+  }
+  
+
 .contact {
   text-align: center;
   padding: 2.5em 0 0 0;
-  background-color: #094438;
+
+
+
 }
+
+@media (max-width: 768px) {
+  .contact {
+    min-height: 250px; /* Increase minimum height for mobile devices */
+  }
+}
+
 
 .container {
   max-width: 1000px;
   margin: 50px auto;
-  padding: 20px;
+  padding: 60px;
   border-radius: 8px;
+  
+  
+  
+
 }
 
 .bio-section {
   display: flex;
   align-items: center;
+
 }
+
+
 
 .profile-image {
   width: 150px;
@@ -512,6 +571,7 @@ align-items: center;
 h2 {
   color: white;
   text-align: left;
+  font-size: 1.25em;
 }
 
 p {
@@ -530,6 +590,7 @@ p {
   /* Use flexbox to align items */
   justify-content: center;
   /* Center items horizontally */
+  
 }
 
 .button {
@@ -561,7 +622,7 @@ footer {
   justify-items: center;
   padding: 2em 0;
   margin-top: 2em;
-  background-image: url(images/liffebg.svg);
+  background-color: #0C594A;
   background-size: cover;
   background-position: center;
 }
