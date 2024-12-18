@@ -81,7 +81,7 @@ section {
 
 
 @media (max-width: 768px) {
-  section {
+  .section {
     padding: 30px 1em; /* Smaller padding for mobile */
   }
 
@@ -499,21 +499,20 @@ align-items: center;
 ============================================== */
 
 .wave2 {
+  min-height: 100vh;
   text-align: center;
-  padding: 2.5em 0 0 0;
-  background-image:url(images/conact.svg) ;
+  background-image: url(images3/conact.svg);
+  background-color: #0C594A;
   background-size: cover;
   background-position: center;
-  background-color: #094438;
-  
-  
-  }
+}
+ 
   
   @media (max-width: 768px) {
-  .contact {
+  .wave2 {
     min-height: 250px; /* Increase minimum height for mobile devices */
   }
-  }
+  } 
   
 
 .contact {
@@ -622,7 +621,7 @@ footer {
   justify-items: center;
   padding: 2em 0;
   margin-top: 2em;
-  background-color: #0C594A;
+  background-color: #094438;
   background-size: cover;
   background-position: center;
 }
